@@ -854,157 +854,12 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .tl-card p{font-size:.91rem;color:var(--gray-500);margin:0;line-height:1.7}
 
 /* ==========================================================================
-   12. PORTFOLIO
-   ========================================================================== */
-.filters{
-  display:flex;flex-wrap:wrap;justify-content:center;
-  gap:10px;margin-bottom:46px;
-}
-.filter-btn{
-  font-family:'Poppins',sans-serif;
-  font-size:13.5px;font-weight:500;
-  padding:10px 22px;border-radius:100px;
-  color:var(--gray-600);
-  background:#fff;
-  border:1px solid var(--gray-200);
-  transition:.32s var(--ease);
-}
-.filter-btn:hover{border-color:rgba(124,58,237,.4);color:var(--purple);transform:translateY(-2px)}
-.filter-btn.active{
-  background:linear-gradient(135deg,var(--purple),var(--purple-light));
-  color:#fff;border-color:transparent;
-  box-shadow:0 12px 28px rgba(124,58,237,.32);
-}
-
-.portfolio-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:26px;
-}
-.pf-card{
-  background:#fff;
-  border:1px solid var(--gray-200);
-  border-radius:var(--radius-lg);
-  overflow:hidden;
-  box-shadow:var(--shadow-xs);
-  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .4s ease,opacity .35s ease;
-  display:flex;flex-direction:column;
-}
-.pf-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:rgba(124,58,237,.24)}
-.pf-card.hide{display:none}
-.pf-card.fade-in{animation:pfIn .45s var(--ease) both}
-@keyframes pfIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
-
-.pf-media{
-  position:relative;
-  aspect-ratio:16/10;
-  overflow:hidden;
-  background:linear-gradient(150deg,#1b0b30,#4c1d95);
-  cursor:pointer;
-}
-.pf-media img{
-  width:100%;height:100%;object-fit:cover;
-  transition:transform .7s var(--ease);
-}
-.pf-card:hover .pf-media img{transform:scale(1.07)}
-.pf-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(20,10,40,0) 40%,rgba(20,10,40,.72));
-  opacity:0;transition:opacity .4s ease;
-  display:flex;align-items:flex-end;justify-content:flex-end;
-  padding:18px;
-}
-.pf-card:hover .pf-overlay{opacity:1}
-.pf-zoom{
-  width:46px;height:46px;border-radius:50%;
-  display:grid;place-items:center;
-  background:rgba(255,255,255,.94);
-  color:var(--purple);font-size:15px;
-  transform:translateY(10px);transition:transform .4s var(--ease);
-}
-.pf-card:hover .pf-zoom{transform:translateY(0)}
-
-.pf-tag{
-  position:absolute;top:16px;left:16px;
-  font-family:'Poppins',sans-serif;
-  font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;
-  color:#fff;
-  background:rgba(124,58,237,.9);
-  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
-  padding:7px 14px;border-radius:100px;
-}
-
-.pf-body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
-.pf-body h3{font-size:1.06rem;margin-bottom:8px}
-.pf-body p{font-size:.9rem;color:var(--gray-500);line-height:1.68;margin:0 0 18px;flex:1}
-.pf-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;
-  color:var(--purple);
-  align-self:flex-start;
-  transition:gap .3s var(--ease);
-}
-.pf-btn:hover{gap:12px}
-.pf-btn i{font-size:11px}
-
-.pf-empty{
-  grid-column:1/-1;text-align:center;padding:60px 20px;
-  color:var(--gray-500);font-size:.95rem;
-}
-
-/* Lightbox */
-.lightbox{
-  position:fixed;inset:0;z-index:2000;
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(8,6,15,.94);
-  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-  padding:28px;
-  opacity:0;visibility:hidden;pointer-events:none;
-  transition:opacity .35s ease,visibility .35s ease;
-}
-.lightbox.open{opacity:1;visibility:visible;pointer-events:auto}
-.lightbox-inner{
-  position:relative;
-  max-width:1000px;width:100%;
-  transform:scale(.94);
-  transition:transform .45s var(--ease);
-}
-.lightbox.open .lightbox-inner{transform:scale(1)}
-.lightbox img{
-  width:100%;max-height:78vh;object-fit:contain;
-  border-radius:var(--radius);
-  box-shadow:0 40px 90px rgba(0,0,0,.7);
-  background:#12102a;
-}
-.lightbox-cap{
-  text-align:center;margin-top:18px;
-  font-family:'Poppins',sans-serif;
-  color:#fff;font-size:1rem;font-weight:600;
-}
-.lightbox-cap small{
-  display:block;margin-top:5px;
-  font-family:'Inter',sans-serif;
-  font-size:12.5px;font-weight:400;color:rgba(255,255,255,.5);
-  letter-spacing:.08em;text-transform:uppercase;
-}
-.lightbox-close{
-  position:absolute;top:-52px;right:0;
-  width:44px;height:44px;border-radius:50%;
-  display:grid;place-items:center;
-  background:rgba(255,255,255,.1);
-  border:1px solid rgba(255,255,255,.2);
-  color:#fff;font-size:17px;
-  transition:.3s ease;
-}
-.lightbox-close:hover{background:var(--purple);border-color:var(--purple);transform:rotate(90deg)}
-
-/* ==========================================================================
-   13. CLIENTS
+   12. HEALTHCARE CLIENTS  (SIMPLIFIED — IMAGE + NAME ONLY)
    ========================================================================== */
 .clients-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(255px,1fr));
-  gap:26px;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
 }
 .client-card{
   background:#fff;
@@ -1013,41 +868,41 @@ input,textarea,select{font-family:inherit;font-size:inherit}
   overflow:hidden;
   box-shadow:var(--shadow-xs);
   transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .4s ease;
+  display:flex;flex-direction:column;
 }
-.client-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:rgba(124,58,237,.24)}
+.client-card:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-lg);
+  border-color:rgba(124,58,237,.34);
+}
+
 .client-media{
-  position:relative;aspect-ratio:4/3;overflow:hidden;
+  position:relative;
+  aspect-ratio:4/3;
+  overflow:hidden;
   background:linear-gradient(150deg,#1b0b30,#4c1d95);
 }
-.client-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
-.client-card:hover .client-media img{transform:scale(1.06)}
-.client-media::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 55%,rgba(20,10,40,.5));
-  pointer-events:none;
+.client-media img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .7s var(--ease);
 }
-.client-badge{
-  position:absolute;bottom:14px;left:14px;z-index:2;
-  display:inline-flex;align-items:center;gap:7px;
-  font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-  color:#fff;background:rgba(124,58,237,.88);
-  padding:6px 13px;border-radius:100px;
-  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+.client-card:hover .client-media img{transform:scale(1.05)}
+
+.client-body{
+  padding:20px 22px 22px;
+  text-align:center;
 }
-.client-body{padding:24px 24px 26px}
-.client-body h3{font-size:1.03rem;margin-bottom:12px}
-.client-meta{display:grid;gap:9px}
-.client-meta li{
-  display:flex;align-items:flex-start;gap:10px;
-  font-size:.87rem;color:var(--gray-500);line-height:1.55;
-}
-.client-meta i{
-  width:18px;text-align:center;color:var(--purple);
-  font-size:12.5px;margin-top:4px;flex-shrink:0;
+.client-body h3{
+  font-family:'Poppins',sans-serif;
+  font-size:.98rem;
+  font-weight:600;
+  line-height:1.4;
+  color:var(--charcoal);
+  margin:0;
 }
 
 /* ==========================================================================
-   14. TESTIMONIALS
+   13. TESTIMONIALS
    ========================================================================== */
 .slider{
   position:relative;
@@ -1135,7 +990,7 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 }
 
 /* ==========================================================================
-   15. VIDEO SHOWREEL
+   14. VIDEO SHOWREEL
    ========================================================================== */
 .video-wrap{
   position:relative;
@@ -1184,7 +1039,7 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .video-play:hover .video-play-btn{transform:scale(1.09);box-shadow:0 30px 64px rgba(124,58,237,.5)}
 
 /* ==========================================================================
-   16. TEAM
+   15. TEAM
    ========================================================================== */
 .team-grid{
   display:grid;
@@ -1239,7 +1094,7 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .team-review p{font-size:.8rem;color:var(--gray-500);font-style:italic;margin:0;line-height:1.6}
 
 /* ==========================================================================
-   17. CTA
+   16. CTA
    ========================================================================== */
 .cta{
   position:relative;
@@ -1276,7 +1131,7 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 }
 
 /* ==========================================================================
-   18. CONTACT
+   17. CONTACT
    ========================================================================== */
 .contact-grid{
   display:grid;
@@ -1421,7 +1276,7 @@ select.form-control{
 .form-status strong{display:block;margin-bottom:5px;font-family:'Poppins',sans-serif}
 
 /* ==========================================================================
-   19. FOOTER
+   18. FOOTER
    ========================================================================== */
 .footer{
   background:var(--black);
@@ -1519,7 +1374,7 @@ select.form-control{
 .footer-bottom .made i{color:var(--purple-light)}
 
 /* ==========================================================================
-   20. FLOATING BUTTONS
+   19. FLOATING BUTTONS
    ========================================================================== */
 .float-stack{
   position:fixed;
@@ -1572,7 +1427,7 @@ select.form-control{
 .float-top.show{opacity:1;visibility:visible;transform:translateY(0)}
 
 /* ==========================================================================
-   21. REVEAL ANIMATIONS
+   20. REVEAL ANIMATIONS
    ========================================================================== */
 .reveal{
   opacity:0;
@@ -1589,13 +1444,15 @@ select.form-control{
 .reveal.d6{transition-delay:.48s}
 
 /* ==========================================================================
-   22. RESPONSIVE
+   21. RESPONSIVE
    ========================================================================== */
 @media (max-width:1180px){
   .nav-link{padding:9px 10px;font-size:13.5px}
   .footer-grid{grid-template-columns:1.4fr 1fr 1fr;gap:38px}
   .footer-grid > div:last-child{grid-column:1 / -1}
   .footer-contact{grid-template-columns:repeat(3,1fr);display:grid}
+
+  .clients-grid{grid-template-columns:repeat(3,1fr);gap:20px}
 }
 
 @media (max-width:1024px){
@@ -1667,8 +1524,7 @@ select.form-control{
   .tm-photo{margin:0 auto}
   .tm-stars{justify-content:center}
 
-  .clients-grid{grid-template-columns:repeat(2,1fr)}
-  .portfolio-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .clients-grid{grid-template-columns:repeat(2,1fr);gap:20px}
 }
 
 @media (max-width:768px){
@@ -1697,11 +1553,7 @@ select.form-control{
   .trust-title{font-size:.82rem;margin-bottom:24px}
   .stat-num{font-size:1.75rem}
 
-  .filters{gap:8px;margin-bottom:32px}
-  .filter-btn{padding:9px 16px;font-size:12.5px}
-
-  .portfolio-grid{grid-template-columns:1fr}
-  .clients-grid{grid-template-columns:1fr}
+  .clients-grid{grid-template-columns:1fr;gap:18px}
 
   .form-card{padding:30px 22px 28px;border-radius:var(--radius-lg)}
   .form-row{grid-template-columns:1fr;gap:0}
@@ -1719,10 +1571,6 @@ select.form-control{
   .float-stack{right:15px;bottom:16px;gap:10px}
   .float-btn{width:50px;height:50px;font-size:19px}
   .float-btn::after{display:none}
-
-  .lightbox{padding:16px}
-  .lightbox-close{top:-46px;right:0;width:40px;height:40px}
-  .lightbox img{max-height:66vh}
 }
 
 @media (max-width:480px){
@@ -1751,6 +1599,9 @@ select.form-control{
   .video-play-btn::before{inset:-10px}
 
   .footer-brand img{height:44px}
+
+  .client-body{padding:16px 18px 18px}
+  .client-body h3{font-size:.92rem}
 }
 
 @media (max-width:360px){
@@ -1762,7 +1613,7 @@ select.form-control{
 }
 
 /* ==========================================================================
-   23. REDUCED MOTION
+   22. REDUCED MOTION
    ========================================================================== */
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
@@ -1774,11 +1625,10 @@ select.form-control{
   }
   .reveal{opacity:1 !important;transform:none !important}
   .orb,.hv-panel,.hv-chip,.why-check,.video-play-btn::before,.float-wa::before{animation:none !important}
-  .pf-card.fade-in{animation:none !important}
 }
 
 /* ==========================================================================
-   24. PRINT
+   23. PRINT
    ========================================================================== */
 @media print{
   .nav,.float-stack,.video-play,.slider-nav{display:none !important}
@@ -1812,7 +1662,6 @@ select.form-control{
       <a href="#home" class="nav-link active">Home</a>
       <a href="#about" class="nav-link">About</a>
       <a href="#services" class="nav-link">Services</a>
-      <a href="#work" class="nav-link">Our Work</a>
       <a href="#clients" class="nav-link">Clients</a>
       <a href="#team" class="nav-link">Team</a>
       <a href="#testimonials" class="nav-link">Testimonials</a>
@@ -1866,7 +1715,7 @@ select.form-control{
           Book a Free Consultation
           <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </a>
-        <a href="#work" class="btn btn-ghost">View Our Work</a>
+        <a href="#clients" class="btn btn-ghost">View Our Clients</a>
       </div>
 
       <div class="hero-contact">
@@ -2064,39 +1913,15 @@ select.form-control{
 </section>
 
 <!-- ==========================================================================
-     PORTFOLIO / OUR WORK
+     HEALTHCARE CLIENTS — SIMPLE (IMAGE + NAME ONLY)
      ========================================================================== -->
-<section class="sec sec-gray" id="work">
+<section class="sec sec-gray" id="clients">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">Portfolio</span>
-      <h2>Our Work</h2>
+      <span class="eyebrow">Healthcare Clients</span>
+      <h2>Healthcare Clients</h2>
       <p>
-        Creative, strategic and technology-driven digital solutions for growing businesses.
-      </p>
-    </div>
-
-    <div class="filters reveal" id="portfolioFilters" role="tablist" aria-label="Filter portfolio by category">
-      <!-- Rendered by JavaScript -->
-    </div>
-
-    <div class="portfolio-grid" id="portfolioGrid">
-      <!-- Rendered by JavaScript from PORTFOLIO_DATA -->
-    </div>
-  </div>
-</section>
-
-<!-- ==========================================================================
-     HEALTHCARE CLIENTS
-     ========================================================================== -->
-<section class="sec" id="clients">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Healthcare</span>
-      <h2>Healthcare Brands We've Worked With</h2>
-      <p>
-        Supporting hospitals, clinics and healthcare professionals with professional
-        digital solutions.
+        Trusted by hospitals, clinics and healthcare professionals.
       </p>
     </div>
 
@@ -2109,7 +1934,7 @@ select.form-control{
 <!-- ==========================================================================
      TESTIMONIALS
      ========================================================================== -->
-<section class="sec sec-gray" id="testimonials">
+<section class="sec" id="testimonials">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Testimonials</span>
@@ -2393,7 +2218,6 @@ select.form-control{
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#services">Services</a>
-          <a href="#work">Our Work</a>
           <a href="#clients">Clients</a>
           <a href="#team">Team</a>
           <a href="#testimonials">Testimonials</a>
@@ -2469,25 +2293,9 @@ select.form-control{
   </button>
 </div>
 
-<!-- ==========================================================================
-     LIGHTBOX
-     ========================================================================== -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Portfolio image viewer">
-  <div class="lightbox-inner">
-    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image viewer">
-      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-    </button>
-    <img src="" alt="" id="lightboxImg">
-    <div class="lightbox-cap" id="lightboxCap"></div>
-  </div>
-</div>
-
 <script>
 /* ==========================================================================
    MAXBYTE DIGITAL HUB — SINGLE FILE SCRIPT
-   --------------------------------------------------------------------------
-   EDITABLE DATA LIVES AT THE TOP OF THIS SECTION.
-   Change names, images, reviews and services here without touching the HTML.
    ========================================================================== */
 (function () {
   'use strict';
@@ -2504,17 +2312,12 @@ select.form-control{
     whatsappMessage: "Hello Maxbyte Digital Hub, I would like to discuss digital marketing services for my business."
   };
 
-  /* ------------------------------------------------------------------------
-     SHOWREEL VIDEO
-     Replace this single line to change the showreel.
-     You can also paste a YouTube embed URL here later, e.g.
-     "https://www.youtube.com/embed/VIDEO_ID"
-     ------------------------------------------------------------------------ */
+  /* SHOWREEL VIDEO — replace this one line to change the video */
   const SHOWREEL_VIDEO  = "assets/video/showreel.mp4";
   const SHOWREEL_POSTER = "assets/video/poster.jpg";
 
   /* ------------------------------------------------------------------------
-     STATS — editable placeholders (not independently verified figures)
+     STATS
      ------------------------------------------------------------------------ */
   const STATS_DATA = [
     { value: 50,  suffix: "+", label: "Projects" },
@@ -2568,31 +2371,33 @@ select.form-control{
   ];
 
   /* ------------------------------------------------------------------------
-     PORTFOLIO — placeholders. Add more projects by copying an object.
-     ------------------------------------------------------------------------ */
-  const PORTFOLIO_DATA = [
-    { title: "Project Name", category: "Healthcare",   image: "assets/portfolio/project-1.jpg", desc: "Add project details here." },
-    { title: "Project Name", category: "Social Media", image: "assets/portfolio/project-2.jpg", desc: "Add project details here." },
-    { title: "Project Name", category: "Websites",     image: "assets/portfolio/project-3.jpg", desc: "Add project details here." },
-    { title: "Project Name", category: "Branding",     image: "assets/portfolio/project-4.jpg", desc: "Add project details here." },
-    { title: "Project Name", category: "Video",        image: "assets/portfolio/project-5.jpg", desc: "Add project details here." },
-    { title: "Project Name", category: "Marketing",    image: "assets/portfolio/project-6.jpg", desc: "Add project details here." }
-  ];
-
-  const PORTFOLIO_FILTERS = ["All", "Healthcare", "Social Media", "Websites", "Branding", "Video", "Marketing"];
-
-  /* ------------------------------------------------------------------------
-     HEALTHCARE CLIENTS — placeholders. Replace names once confirmed.
+     HEALTHCARE CLIENTS — SIMPLE (name + image only)
+     Keep the exact image paths already used.
      ------------------------------------------------------------------------ */
   const CLIENT_DATA = [
-    { name: "Hospital / Clinic Name", location: "Location", services: "Digital Marketing Services", image: "assets/clients/hospital-1.jpg" },
-    { name: "Hospital / Clinic Name", location: "Location", services: "Digital Marketing Services", image: "assets/clients/hospital-2.jpg" },
-    { name: "Hospital / Clinic Name", location: "Location", services: "Digital Marketing Services", image: "assets/clients/hospital-3.jpg" },
-    { name: "Hospital / Clinic Name", location: "Location", services: "Digital Marketing Services", image: "assets/clients/hospital-4.jpg" }
+    { name: "Vedanta Dental Clinic",                      image: "vedanta.png" },
+    { name: "Nirogyam Physiotherapy Clinic",              image: "nirogyan.png" },
+    { name: "Nims Hospital",                              image: "niims.png" },
+    { name: "Prayag Super Speciality Hospital",           image: "prayag.png" },
+    { name: "Bharat Super Speciality Hospital",           image: "bharat.png" },
+    { name: "Kedar Multispeciality Hospital",             image: "kedar.png" },
+    { name: "Madhav Multispeciality Hospital",            image: "madhav.png" },
+    { name: "Eye Sight Hospital",                         image: "esh eye.png" },
+    { name: "Sharma Maternity & Eye Centre",              image: "sharmamertinity.png" },
+    { name: "Synergy Multispeciality Hospital",           image: "synergy.png" },
+    { name: "Doctor Today Heart and Multispeciality Hospital", image: "doctor today.png" },
+    { name: "Khurana Multispeciality Trust Hospital",     image: "khurana .png" },
+    { name: "Golden Minutes Hospital",                    image: "goldeninute.png" },
+    { name: "Orchid Clinic",                              image: "assets/clients/orchid-clinic.jpg" },
+    { name: "Aarogya Physiotherapy Clinic",               image: "aarogya.png" },
+    { name: "Prakash Hospital",                           image: "assets/clients/prakash-hospital.jpg" },
+    { name: "Alpha Dental",                               image: "assets/clients/alpha-dental.jpg" },
+    { name: "Sanjeevani",                                 image: "sanjeevani.png" },
+    { name: "Kumar Dental Clinic",                        image: "kumar dental.png" }
   ];
 
   /* ------------------------------------------------------------------------
-     TESTIMONIALS — placeholders only. Add real reviews when available.
+     TESTIMONIALS
      ------------------------------------------------------------------------ */
   const TESTIMONIAL_DATA = [
     {
@@ -2619,7 +2424,7 @@ select.form-control{
   ];
 
   /* ------------------------------------------------------------------------
-     TEAM — reviews are editable placeholders, not verified testimonials.
+     TEAM
      ------------------------------------------------------------------------ */
   const TEAM_DATA = [
     { name: "Himanshi",  role: "Founder",                        image: "assets/team/himanshi.jpg",  bio: "Leading strategy, direction and business growth at Maxbyte Digital Hub.",           review: "Add team member review here." },
@@ -2633,7 +2438,6 @@ select.form-control{
 
   /* ========================================================================
      2. IMAGE PLACEHOLDER SYSTEM
-     Never shows a broken image icon — swaps to a branded SVG placeholder.
      ======================================================================== */
   const PLACEHOLDER_CACHE = {};
 
@@ -2690,7 +2494,6 @@ select.form-control{
     });
   }
 
-  /* Logo handling: hide the broken logo and show the text wordmark instead */
   function bindLogoFallback(imgEl, textEl) {
     if (!imgEl || !textEl) return;
     function fail() {
@@ -2792,98 +2595,17 @@ select.form-control{
   }
 
   /* ========================================================================
-     8. RENDER — PORTFOLIO + FILTERS
-     ======================================================================== */
-  function renderPortfolioFilters() {
-    const html = PORTFOLIO_FILTERS.map(function (f, i) {
-      return '<button type="button" class="filter-btn' + (i === 0 ? " active" : "") + '" ' +
-             'data-filter="' + esc(f) + '" role="tab" aria-selected="' + (i === 0) + '">' +
-             esc(f) + '</button>';
-    }).join("");
-    setHTML("portfolioFilters", html);
-  }
-
-  function renderPortfolio() {
-    const html = PORTFOLIO_DATA.map(function (p, i) {
-      return '' +
-        '<article class="pf-card reveal d' + ((i % 3) + 1) + '" data-category="' + esc(p.category) + '">' +
-          '<div class="pf-media" data-lightbox="' + esc(p.image) + '" data-title="' + esc(p.title) + '" data-cat="' + esc(p.category) + '" tabindex="0" role="button" aria-label="View project image: ' + esc(p.title) + '">' +
-            imgTag(p.image, p.title + " — " + p.category + " project by Maxbyte Digital Hub", "Image Coming Soon") +
-            '<span class="pf-tag">' + esc(p.category) + '</span>' +
-            '<div class="pf-overlay"><span class="pf-zoom"><i class="fa-solid fa-expand" aria-hidden="true"></i></span></div>' +
-          '</div>' +
-          '<div class="pf-body">' +
-            '<h3>' + esc(p.title) + '</h3>' +
-            '<p>' + esc(p.desc) + '</p>' +
-            '<a href="#contact" class="pf-btn">View Project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>' +
-          '</div>' +
-        '</article>';
-    }).join("");
-    setHTML("portfolioGrid", html);
-  }
-
-  function initPortfolioFilter() {
-    const wrap = document.getElementById("portfolioFilters");
-    const grid = document.getElementById("portfolioGrid");
-    if (!wrap || !grid) return;
-
-    wrap.addEventListener("click", function (e) {
-      const btn = e.target.closest(".filter-btn");
-      if (!btn) return;
-
-      wrap.querySelectorAll(".filter-btn").forEach(function (b) {
-        b.classList.remove("active");
-        b.setAttribute("aria-selected", "false");
-      });
-      btn.classList.add("active");
-      btn.setAttribute("aria-selected", "true");
-
-      const filter = btn.dataset.filter;
-      const cards = grid.querySelectorAll(".pf-card");
-      let visible = 0;
-
-      cards.forEach(function (card) {
-        const match = (filter === "All") || (card.dataset.category === filter);
-        card.classList.remove("fade-in");
-        if (match) {
-          card.classList.remove("hide");
-          void card.offsetWidth; /* force reflow for animation restart */
-          card.classList.add("fade-in");
-          visible++;
-        } else {
-          card.classList.add("hide");
-        }
-      });
-
-      const empty = grid.querySelector(".pf-empty");
-      if (empty) empty.remove();
-
-      if (visible === 0) {
-        const msg = document.createElement("p");
-        msg.className = "pf-empty";
-        msg.textContent = "Projects for this category will be added soon.";
-        grid.appendChild(msg);
-      }
-    });
-  }
-
-  /* ========================================================================
-     9. RENDER — HEALTHCARE CLIENTS
+     8. RENDER — HEALTHCARE CLIENTS (IMAGE + NAME ONLY)
      ======================================================================== */
   function renderClients() {
     const html = CLIENT_DATA.map(function (c, i) {
       return '' +
         '<article class="client-card reveal d' + ((i % 4) + 1) + '">' +
           '<div class="client-media">' +
-            imgTag(c.image, c.name + " — healthcare client of Maxbyte Digital Hub", "Image Coming Soon") +
-            '<span class="client-badge"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Healthcare</span>' +
+            imgTag(c.image, c.name + " — healthcare client of Maxbyte Digital Hub", "Client Image Coming Soon") +
           '</div>' +
           '<div class="client-body">' +
             '<h3>' + esc(c.name) + '</h3>' +
-            '<ul class="client-meta">' +
-              '<li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>' + esc(c.location) + '</span></li>' +
-              '<li><i class="fa-solid fa-briefcase" aria-hidden="true"></i><span>' + esc(c.services) + '</span></li>' +
-            '</ul>' +
           '</div>' +
         '</article>';
     }).join("");
@@ -2891,7 +2613,7 @@ select.form-control{
   }
 
   /* ========================================================================
-     10. RENDER — TESTIMONIAL SLIDER
+     9. RENDER — TESTIMONIAL SLIDER
      ======================================================================== */
   let sliderIndex = 0;
   let sliderTimer = null;
@@ -2979,22 +2701,18 @@ select.form-control{
       });
     }
 
-    /* Pause on hover */
     slider.addEventListener("mouseenter", function () { sliderPaused = true; });
     slider.addEventListener("mouseleave", function () { sliderPaused = false; });
 
-    /* Pause when tab hidden */
     document.addEventListener("visibilitychange", function () {
       sliderPaused = document.hidden;
     });
 
-    /* Keyboard */
     slider.addEventListener("keydown", function (e) {
       if (e.key === "ArrowLeft")  goToSlide(sliderIndex - 1);
       if (e.key === "ArrowRight") goToSlide(sliderIndex + 1);
     });
 
-    /* Swipe support */
     let startX = 0, startY = 0, tracking = false;
     slider.addEventListener("touchstart", function (e) {
       const t = e.changedTouches[0];
@@ -3018,7 +2736,7 @@ select.form-control{
   }
 
   /* ========================================================================
-     11. RENDER — TEAM
+     10. RENDER — TEAM
      ======================================================================== */
   function renderTeam() {
     const html = TEAM_DATA.map(function (m, i) {
@@ -3042,7 +2760,7 @@ select.form-control{
   }
 
   /* ========================================================================
-     12. VIDEO SHOWREEL
+     11. VIDEO SHOWREEL
      ======================================================================== */
   function initVideo() {
     const video = document.getElementById("showreel");
@@ -3050,7 +2768,6 @@ select.form-control{
     const wrap = document.getElementById("videoWrap");
     if (!video || !wrap) return;
 
-    /* YouTube support: swap <video> for an iframe when an embed URL is used */
     if (/youtube\.com\/embed|youtu\.be|vimeo\.com/.test(SHOWREEL_VIDEO)) {
       const iframe = document.createElement("iframe");
       iframe.src = SHOWREEL_VIDEO;
@@ -3070,7 +2787,6 @@ select.form-control{
     source.type = "video/mp4";
     video.appendChild(source);
 
-    /* Graceful fallback if the video file is missing */
     source.addEventListener("error", function () {
       if (wrap.dataset.videoMissing === "1") return;
       wrap.dataset.videoMissing = "1";
@@ -3100,63 +2816,7 @@ select.form-control{
   }
 
   /* ========================================================================
-     13. LIGHTBOX
-     ======================================================================== */
-  let lastFocused = null;
-
-  function initLightbox() {
-    const box = document.getElementById("lightbox");
-    const img = document.getElementById("lightboxImg");
-    const cap = document.getElementById("lightboxCap");
-    const closeBtn = document.getElementById("lightboxClose");
-    const grid = document.getElementById("portfolioGrid");
-    if (!box || !grid) return;
-
-    function open(src, title, cat) {
-      lastFocused = document.activeElement;
-      img.src = src;
-      img.alt = title + " — " + cat + " project by Maxbyte Digital Hub";
-      img.onerror = function () { img.src = placeholderFor("Image Coming Soon"); };
-      cap.innerHTML = esc(title) + "<small>" + esc(cat) + "</small>";
-      box.classList.add("open");
-      document.body.style.overflow = "hidden";
-      if (closeBtn) closeBtn.focus();
-    }
-
-    function close() {
-      box.classList.remove("open");
-      document.body.style.overflow = "";
-      if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
-    }
-
-    grid.addEventListener("click", function (e) {
-      const media = e.target.closest(".pf-media");
-      if (!media) return;
-      open(media.dataset.lightbox, media.dataset.title, media.dataset.cat);
-    });
-
-    grid.addEventListener("keydown", function (e) {
-      const media = e.target.closest(".pf-media");
-      if (!media) return;
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        open(media.dataset.lightbox, media.dataset.title, media.dataset.cat);
-      }
-    });
-
-    if (closeBtn) closeBtn.addEventListener("click", close);
-
-    box.addEventListener("click", function (e) {
-      if (e.target === box) close();
-    });
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && box.classList.contains("open")) close();
-    });
-  }
-
-  /* ========================================================================
-     14. WHATSAPP LINKS
+     12. WHATSAPP LINKS
      ======================================================================== */
   function buildWhatsAppURL(message) {
     const digits = SITE_DATA.phone.replace(/\D/g, "");
@@ -3174,7 +2834,7 @@ select.form-control{
   }
 
   /* ========================================================================
-     15. NAVBAR
+     13. NAVBAR
      ======================================================================== */
   function initNavbar() {
     const nav = document.getElementById("navbar");
@@ -3182,7 +2842,6 @@ select.form-control{
     const navLinks = document.getElementById("navLinks");
     const links = navLinks ? navLinks.querySelectorAll(".nav-link") : [];
 
-    /* Scroll state */
     function onScroll() {
       if (!nav) return;
       if (window.scrollY > 24) nav.classList.add("scrolled");
@@ -3194,7 +2853,6 @@ select.form-control{
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
-    /* Mobile menu */
     function closeMenu() {
       if (!navLinks || !hamburger) return;
       navLinks.classList.remove("open");
@@ -3222,7 +2880,6 @@ select.form-control{
       link.addEventListener("click", closeMenu);
     });
 
-    /* Close menu when clicking outside */
     document.addEventListener("click", function (e) {
       if (!navLinks || !navLinks.classList.contains("open")) return;
       if (navLinks.contains(e.target)) return;
@@ -3230,12 +2887,10 @@ select.form-control{
       closeMenu();
     });
 
-    /* Close on ESC */
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") closeMenu();
     });
 
-    /* Close on resize up */
     let rt;
     window.addEventListener("resize", function () {
       clearTimeout(rt);
@@ -3261,7 +2916,7 @@ select.form-control{
   }
 
   /* ========================================================================
-     16. BACK TO TOP
+     14. BACK TO TOP
      ======================================================================== */
   function initBackToTop() {
     const btn = document.getElementById("backToTop");
@@ -3272,7 +2927,7 @@ select.form-control{
   }
 
   /* ========================================================================
-     17. SERVICE LINK → PREFILL CONTACT FORM
+     15. SERVICE LINK → PREFILL CONTACT FORM
      ======================================================================== */
   function initServiceLinks() {
     document.addEventListener("click", function (e) {
@@ -3289,7 +2944,7 @@ select.form-control{
   }
 
   /* ========================================================================
-     18. SCROLL REVEAL
+     16. SCROLL REVEAL
      ======================================================================== */
   let revealObserver = null;
 
@@ -3319,7 +2974,7 @@ select.form-control{
   }
 
   /* ========================================================================
-     19. COUNTER ANIMATION
+     17. COUNTER ANIMATION
      ======================================================================== */
   function initCounters() {
     const counters = document.querySelectorAll("[data-count]");
@@ -3367,7 +3022,7 @@ select.form-control{
   }
 
   /* ========================================================================
-     20. HERO SPARKLES
+     18. HERO SPARKLES
      ======================================================================== */
   function initSparkles() {
     const box = document.getElementById("sparkles");
@@ -3391,7 +3046,7 @@ select.form-control{
   }
 
   /* ========================================================================
-     21. CONTACT FORM
+     19. CONTACT FORM
      ======================================================================== */
   function showFormStatus(type, html) {
     const el = document.getElementById("formStatus");
@@ -3400,33 +3055,12 @@ select.form-control{
     el.innerHTML = html;
   }
 
-  /**
-   * handleFormSubmit()
-   * ------------------------------------------------------------------------
-   * Front-end validation only. There is NO backend connected by default.
-   * To actually deliver enquiries, replace the block marked
-   * >>> CONNECT YOUR BACKEND HERE <<< with one of:
-   *
-   *   • Formspree:  fetch("https://formspree.io/f/XXXX", { method:"POST",
-   *                   headers:{ "Accept":"application/json" },
-   *                   body: new FormData(form) })
-   *
-   *   • EmailJS:    emailjs.send("service_id","template_id", payload, "public_key")
-   *
-   *   • Your API:   fetch("/api/enquiry", { method:"POST",
-   *                   headers:{ "Content-Type":"application/json" },
-   *                   body: JSON.stringify(payload) })
-   *
-   * The form currently offers a WhatsApp hand-off so the enquiry is still
-   * actionable without a backend.
-   */
   function handleFormSubmit(event) {
     event.preventDefault();
 
     const form = event.target;
     const submitBtn = document.getElementById("submitBtn");
 
-    /* Clear previous state */
     form.querySelectorAll(".field-error").forEach(function (el) { el.textContent = ""; });
     form.querySelectorAll(".form-control").forEach(function (el) { el.classList.remove("invalid"); });
     const statusEl = document.getElementById("formStatus");
@@ -3470,7 +3104,6 @@ select.form-control{
       return;
     }
 
-    /* Build the enquiry payload */
     const payload = {
       name: name,
       phone: phone,
@@ -3482,16 +3115,8 @@ select.form-control{
       submittedAt: new Date().toISOString()
     };
 
-    /* >>> CONNECT YOUR BACKEND HERE <<<
-       Example (Formspree):
-       fetch("https://formspree.io/f/YOUR_ID", {
-         method: "POST",
-         headers: { "Accept": "application/json" },
-         body: new FormData(form)
-       }).then(...)
-    */
+    /* >>> CONNECT YOUR BACKEND HERE <<< */
 
-    /* ---- WhatsApp hand-off (works without any backend) ---- */
     const waText =
       "Hello Maxbyte Digital Hub, I would like to discuss digital marketing services for my business.\n\n" +
       "Name: " + name + "\n" +
@@ -3534,7 +3159,6 @@ select.form-control{
     if (!form) return;
     form.addEventListener("submit", handleFormSubmit);
 
-    /* Live validation clear */
     form.querySelectorAll(".form-control").forEach(function (input) {
       input.addEventListener("input", function () {
         input.classList.remove("invalid");
@@ -3545,7 +3169,7 @@ select.form-control{
   }
 
   /* ========================================================================
-     22. MISC
+     20. MISC
      ======================================================================== */
   function initYear() {
     const el = document.getElementById("year");
@@ -3558,31 +3182,23 @@ select.form-control{
   }
 
   /* ========================================================================
-     23. INIT
+     21. INIT
      ======================================================================== */
   function init() {
-    /* Static fallbacks first (navbar + footer logos) */
     initLogos();
 
-    /* Render dynamic sections */
     renderStats();
     renderServices();
     renderWhy();
     renderProcess();
-    renderPortfolioFilters();
-    renderPortfolio();
     renderClients();
     renderTestimonials();
     renderTeam();
 
-    /* Bind fallbacks for all dynamically created images */
     bindImageFallbacks(document);
 
-    /* Interactions */
     initNavbar();
-    initPortfolioFilter();
     initSlider();
-    initLightbox();
     initVideo();
     initWhatsApp();
     initBackToTop();
@@ -3591,11 +3207,9 @@ select.form-control{
     initSparkles();
     initYear();
 
-    /* Animations last (after DOM is complete) */
     initReveal();
     initCounters();
 
-    /* Re-bind fallbacks after images settle (safety net) */
     window.addEventListener("load", function () {
       bindImageFallbacks(document);
       initReveal();
@@ -3615,7 +3229,6 @@ select.form-control{
     SERVICES_DATA: SERVICES_DATA,
     WHY_DATA: WHY_DATA,
     PROCESS_DATA: PROCESS_DATA,
-    PORTFOLIO_DATA: PORTFOLIO_DATA,
     CLIENT_DATA: CLIENT_DATA,
     TESTIMONIAL_DATA: TESTIMONIAL_DATA,
     TEAM_DATA: TEAM_DATA,
